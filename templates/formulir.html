@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir Pendaftaran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+    }
+    .form-container {
+      max-width: 700px;
+      margin: 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea,
+    input[type="number"] { /* Tambahkan ini untuk input angka */
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .radio-group label {
+      display: inline-block; /* Untuk radio button, agar labelnya di samping */
+      margin-right: 15px;
+      font-weight: normal; /* Kembali ke normal untuk label radio */
+    }
+    .radio-group input[type="radio"] {
+      width: auto; /* Otomatiskan lebar radio button */
+      margin-right: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #f5a425;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e5941e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Formulir SPMB SDN KOTA BARU TA.2025/2026</h2>
+    <form method="POST" action="/submit">
+      <div class="form-group">
+        <label for="nama_lengkap">Nama Lengkap</label>
+        <input type="text" id="nama_lengkap" name="nama_lengkap" required>
+      </div>
+
+      <div class="form-group">
+        <label>Jenis Kelamin</label>
+        <div class="radio-group">
+          <input type="radio" id="jk_laki" name="jenis_kelamin" value="Laki-laki" required>
+          <label for="jk_laki">Laki-laki</label>
+          <input type="radio" id="jk_perempuan" name="jenis_kelamin" value="Perempuan">
+          <label for="jk_perempuan">Perempuan</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tempat_lahir">Tempat Lahir</label>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tanggal_lahir">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+      </div>
+
+      <div class="form-group">
+        <label for="agama">Agama</label>
+        <input type="text" id="agama" name="agama" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tinggi_badan">Tinggi Badan (cm)</label>
+        <input type="number" id="tinggi_badan" name="tinggi_badan" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="berat_badan">Berat Badan (kg)</label>
+        <input type="number" id="berat_badan" name="berat_badan" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nik_siswa">NIK Siswa</label>
+        <input type="text" id="nik_siswa" name="nik_siswa" required pattern="\d{16}" title="NIK harus 16 digit angka">
+      </div>
+
+      <div class="form-group">
+        <label for="no_kk">No. KK</label>
+        <input type="text" id="no_kk" name="no_kk" required pattern="\d{16}" title="Nomor KK harus 16 digit angka">
+      </div>
+
+      <div class="form-group">
+        <label for="alamat_lengkap">Alamat Lengkap</label>
+        <textarea id="alamat_lengkap" name="alamat_lengkap" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="nama_ayah">Nama Ayah</label>
+        <input type="text" id="nama_ayah" name="nama_ayah" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pendidikan_ayah">Pendidikan Ayah</label>
+        <select id="pendidikan_ayah" name="pendidikan_ayah" required>
+          <option value="">-- Pilih --</option>
+          <option value="SD">SD</option>
+          <option value="SMP">SMP</option>
+          <option value="SMA">SMA</option>
+          <option value="S1">S1</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+        <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" required>
+      </div>
+
+      <div class="form-group">
+        <label for="penghasilan_ayah">Penghasilan Ayah / bulan</label>
+        <select id="penghasilan_ayah" name="penghasilan_ayah" required>
+          <option value="">-- Pilih --</option>
+          <option value="kurang_dari_1jt">Kurang dari 1 jt</option>
+          <option value="1jt_sd_2jt">1 jt s/d 2 jt</option>
+          <option value="2jt_sd_3jt">2 jt s/d 3 jt</option>
+          <option value="3jt_sd_4jt">3 jt s/d 4 jt</option>
+          <option value="4jt_lebih">4 jt lebih</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nama_ibu">Nama Ibu</label>
+        <input type="text" id="nama_ibu" name="nama_ibu" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pendidikan_ibu">Pendidikan Ibu</label>
+        <select id="pendidikan_ibu" name="pendidikan_ibu" required>
+          <option value="">-- Pilih --</option>
+          <option value="SD">SD</option>
+          <option value="SMP">SMP</option>
+          <option value="SMA">SMA</option>
+          <option value="S1">S1</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+        <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nomor_hp">Nomor HP (WhatsApp)</label>
+        <input type="tel" id="nomor_hp" name="nomor_hp" required pattern="[0-9]{8,15}" title="Masukkan nomor HP yang valid (8-15 digit angka)">
+      </div>
+
+      <div class="form-group">
+        <label for="asal_sekolah">Asal Sekolah</label>
+        <input type="text" id="asal_sekolah" name="asal_sekolah" required>
+      </div>
+
+      <button type="submit">Kirim Formulir</button>
+    </form>
+  </div>
+
+</body>
+</html>
